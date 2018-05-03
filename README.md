@@ -1,27 +1,35 @@
-# vue-slide
+# Vue-slide
 
 > A Vue Slide Component to show Banners
 
-## Build Setup
+## Installation
+#### NPM
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run all tests
-npm test
+```bash
+npm install vue-slide --save
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Register the component
+
+```js
+import SlideVue from 'vue-slide'
+```
+
+```js
+Vue.component('vue-slide', SlideVue);
+```
+
+## Usage
+
+```html
+<vue-slide :items="banners"></vue-slide>
+```
+
+## Props
+| Name | Type | Default | Description |
+| ---:| --- | ---| --- |
+| items | Array | [] | Items to be render in the Slide |
+| timeout | Number | 5000 | Automatically changed item on timeout |
+| isAuto | Boolean | true | Whether used or not automatically changing item |
+| isRepeat | Boolean | true | Whether used or not repetition when reached last item. |
+| touch | Boolean | true | Whether used or not flip using touch action |
