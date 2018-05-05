@@ -51,6 +51,14 @@ export default {
       type: Number,
       default: 5000,
     },
+    maxHeight: {
+      type: String,
+      default: '500px',
+    },
+    maxWidth: {
+      type: String,
+      default: '100%',
+    },
     isAuto: {
       type: Boolean,
       default: true,
@@ -63,18 +71,21 @@ export default {
       type: Boolean,
       default: true,
     },
-    maxHeight: {
-      type: String,
-      default: '500px',
-    },
-    maxWidth: {
-      type: String,
-      default: '100%',
-    },
   },
   data() {
     return {
-      usedItems: [],
+      usedItems: [
+        {
+          image: './static/1.jpg',
+          link: 'https://www.lezhin.com/ko/page/shocking_sale180416_all?utm_source=lz&utm_medium=banner&utm_campaign=shocking_sale180416_allutm_content=hero',
+        }, {
+          image: './static/2.jpg',
+          link: 'https://www.lezhin.com/ko/comic/dalbox',
+        }, {
+          image: './static/3.jpg',
+          link: 'https://www.lezhin.com/ko/novel/leviathan',
+        },
+      ],
       currentPage: 1,
       setTimeouts: null,
       imageSizeStyleObject: {
