@@ -9,7 +9,7 @@
 npm install vue-slide --save
 ```
 
-Register the component
+## Register the component
 
 ```js
 import SlideVue from 'vue-slide'
@@ -22,6 +22,18 @@ Vue.component('vue-slide', SlideVue);
 ## Usage
 
 ```html
+<!--
+const banners = [
+  {
+    image: '',
+    link: '',
+  }, {
+    image: '',
+    link: '',
+  },
+]
+-->
+
 <vue-slide :items="banners"></vue-slide>
 ```
 
