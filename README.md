@@ -12,7 +12,7 @@ npm install @seolhun/vue-slide --save
 ## Register the component
 
 ```js
-import SlideVue from 'vue-slide'
+import SlideVue from '@seolhun/vue-slide'
 ```
 
 ```js
