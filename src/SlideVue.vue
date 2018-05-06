@@ -141,13 +141,13 @@ export default {
       if (this.isAuto) {
         this.setTimeouts = setTimeout(() => {
           if (this.isLast()) {
-            if (this.isRepeat) {
-              this.goTo(1, false);
+            if (!this.isRepeat) {
               return;
             }
-            return;
+            this.goTo(1, false);
+          } else {
+            this.goTo(this.currentPage + 1, false);
           }
-          this.goTo(this.currentPage + 1, false);
           this.automaticPaging();
         }, this.timeout);
       }
