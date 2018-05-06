@@ -23,6 +23,17 @@ Vue.component('vue-slide', SlideVue);
 
 ```html
 <vue-slide :items="banners"></vue-slide>
+/*
+const banners = [
+  {
+    image: '',
+    link: '',
+  }, {
+    image: '',
+    link: '',
+  },
+]
+*/
 ```
 
 ## Props
@@ -34,7 +45,7 @@ Vue.component('vue-slide', SlideVue);
 | timeout | Number | 5000 | Automatically changed item on timeout |
 | isAuto | Boolean | true | Whether used or not automatically changing item |
 | isRepeat | Boolean | true | Whether used or not repetition when reached last item. |
-| touch | Boolean | true | Whether used or not flip using touch action |
+<!-- | touch | Boolean | true | Whether used or not flip using touch action | -->
 
 ## Next Update List
 - Mobile Break point prop will be added for custom.
