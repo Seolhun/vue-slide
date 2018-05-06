@@ -59,7 +59,7 @@ const banners = [
 | items | Array | [] | Items to be render in the Slide |
 | itemImageKey | String | 'image' | Image key of items to show client |
 | itemLinkKey | String | 'link' | Link key of items to show client |
-| timeout | Number | 5000 | Automatically changed item on timeout |
+| timeout | Number | 6000 | Automatically changed item on timeout |
 | isAuto | Boolean | true | Whether used or not automatically changing item |
 | isRepeat | Boolean | true | Whether used or not repetition when reached last item. |
 
