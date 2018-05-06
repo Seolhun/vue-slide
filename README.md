@@ -6,7 +6,7 @@
 #### NPM
 
 ```bash
-npm install vue-slide --save
+npm install @seolhun/vue-slide --save
 ```
 
 ## Register the component
@@ -33,7 +33,6 @@ const banners = [
   },
 ]
 -->
-
 <vue-slide :items="banners"></vue-slide>
 ```
 
@@ -46,6 +45,7 @@ const banners = [
 | timeout | Number | 5000 | Automatically changed item on timeout |
 | isAuto | Boolean | true | Whether used or not automatically changing item |
 | isRepeat | Boolean | true | Whether used or not repetition when reached last item. |
+
 <!-- | touch | Boolean | true | Whether used or not flip using touch action | -->
 
 ## Next Update List
