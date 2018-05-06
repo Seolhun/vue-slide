@@ -21,6 +21,7 @@ Vue.component('vue-slide', SlideVue);
 
 ## Usage
 
+#### 1. Default items
 ```html
 <!--
 const banners = [
@@ -33,7 +34,23 @@ const banners = [
   },
 ]
 -->
-<vue-slide :items="banners"></vue-slide>
+<vue-slide :items='banners'></vue-slide>
+```
+
+#### 2. Custom items
+```html
+<!--
+const banners = [
+  {
+    img: '',
+    url: '',
+  }, {
+    img: '',
+    url: '',
+  },
+]
+-->
+<vue-slide :items='banners' :itemImageKey='img' :itemLinkKey='url'></vue-slide>
 ```
 
 ## Props
