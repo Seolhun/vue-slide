@@ -23,17 +23,6 @@ Vue.component('vue-slide', SlideVue);
 
 ```html
 <vue-slide :items="banners"></vue-slide>
-/*
-const banners = [
-  {
-    image: '',
-    link: '',
-  }, {
-    image: '',
-    link: '',
-  },
-]
-*/
 ```
 
 ## Props
