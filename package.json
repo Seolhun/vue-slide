@@ -1,6 +1,6 @@
 {
   "name": "@seolhun/vue-slide",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Vue Slide Component to show Banners",
   "author": "Seolhun <shun10114@gmail.com>",
   "scripts": {
