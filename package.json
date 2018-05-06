@@ -1,5 +1,5 @@
 {
-  "name": "vue-slide",
+  "name": "@seolhun/vue-slide",
   "version": "1.0.0",
   "description": "A Vue Slide Component to show Banners",
   "author": "Seolhun <shun10114@gmail.com>",
@@ -73,5 +73,22 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Seolhun/vue-slide.git"
+  },
+  "keywords": [
+    "[Vue",
+    "Slide]"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Seolhun/vue-slide/issues"
+  },
+  "homepage": "https://github.com/Seolhun/vue-slide#readme"
 }
