@@ -1,6 +1,6 @@
 <template>
   <section>
-    <span id='_slide-vue-name' v-show='false'>SlideVue By SeolHun</span>
+    <span id='_slide-vue-name' v-show='false'>SlideVue</span>
     <aside id='_slide-vue'>
       <div class='slide-vue'>
         <div
@@ -8,10 +8,10 @@
           v-for='(item, index) in this.usedItems' v-bind:key='item.link'
           v-bind:class='index === currentPage - 1 ? "on" : ""'
         >
-          <a v-bind:href='item.link'>
+          <a v-bind:href='itemLinkKey ? item[itemLinkKey] : item.link'>
             <img
-              class='slide-vue-item-image'
-              v-bind:src='item.image'
+              class='slide-vue-item-image fade'
+              v-bind:src='itemImageKey ? item[itemImageKey] : item.image'
               v-bind:style='imageSizeStyleObject'
             >
           </a>
@@ -47,19 +47,23 @@ export default {
       type: Array,
       default: () => [],
     },
+    itemImageKey: {
+      type: String,
+      default: 'image',
+    },
+    itemLinkKey: {
+      type: String,
+      default: 'link',
+    },
     timeout: {
       type: Number,
-      default: 5000,
+      default: 6000,
     },
     isAuto: {
       type: Boolean,
       default: true,
     },
     isRepeat: {
-      type: Boolean,
-      default: true,
-    },
-    touch: {
       type: Boolean,
       default: true,
     },
@@ -71,10 +75,18 @@ export default {
       type: String,
       default: '100%',
     },
+    // touch: {
+    //   type: Boolean,
+    //   default: true,
+    // },
+    // mobileBreakPoint: {
+    //   type: Number,
+    //   default: 768,
+    // },
+    // https://www.w3schools.com/jsref/met_win_matchmedia.asp
   },
   data() {
     return {
-      usedItems: [],
       currentPage: 1,
       setTimeouts: null,
       imageSizeStyleObject: {
@@ -118,33 +130,35 @@ export default {
       this.goTo(this.currentPage - 1);
     },
     resetTimeout() {
-      while (this.setTimeouts >= 0) {
-        clearTimeout(this.setTimeouts);
-        this.setTimeouts -= 1;
+      if (this.isAuto) {
+        while (this.setTimeouts >= 0) {
+          clearTimeout(this.setTimeouts);
+          this.setTimeouts -= 1;
+        }
       }
-    },
-    autoNext() {
-      if (this.isLast()) {
-        this.goTo(1, false);
-        return;
-      }
-      this.goTo(this.currentPage + 1, false);
     },
     automaticPaging() {
-      this.setTimeouts = setTimeout(() => {
-        this.autoNext();
-        this.automaticPaging();
-      }, this.timeout);
+      if (this.isAuto) {
+        this.setTimeouts = setTimeout(() => {
+          if (this.isLast()) {
+            if (this.isRepeat) {
+              this.goTo(1, false);
+              return;
+            }
+            return;
+          }
+          this.goTo(this.currentPage + 1, false);
+          this.automaticPaging();
+        }, this.timeout);
+      }
     },
   },
   computed: {
+    usedItems() {
+      return [...this.items];
+    },
     lastPage() {
       return this.usedItems.length;
-    },
-  },
-  watch: {
-    items() {
-      this.usedItems = [...this.items];
     },
   },
 };
@@ -280,7 +294,7 @@ img {
 
 @-webkit-keyframes fade {
   from {
-    opacity: 0.4;
+    opacity: 0.5;
   }
   to {
     opacity: 1;
@@ -289,7 +303,7 @@ img {
 
 @keyframes fade {
   from {
-    opacity: 0.4;
+    opacity: 0.5;
   }
   to {
     opacity: 1;
