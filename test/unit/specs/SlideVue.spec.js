@@ -6,6 +6,6 @@ describe('SlideVue.vue', () => {
     const Constructor = Vue.extend(SlideVue);
     const vm = new Constructor().$mount();
     expect(vm.$el.querySelector('#_slide-vue-name').textContent)
-      .toEqual('SlideVue By SeolHun');
+      .toEqual('SlideVue');
   });
 });
